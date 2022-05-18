@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../Delivery_tracking.dart';
-
-class AcceptCard extends StatefulWidget {
+class DeliveryCard extends StatefulWidget {
   @override
-  _AcceptCardState createState() => _AcceptCardState();
+  _DeliveryCardState createState() => _DeliveryCardState();
 }
 
-class _AcceptCardState extends State<AcceptCard> {
+class _DeliveryCardState extends State<DeliveryCard> {
   @override
   Widget build(BuildContext context) {
-
     Size size = MediaQuery.of(context).size;
 
     return Container(
@@ -44,7 +41,7 @@ class _AcceptCardState extends State<AcceptCard> {
               Container(
                 width: size.width*0.2,
                 height: size.width*0.2,
-                child: Image(image: AssetImage("assets/tracking.png"),),
+                child: Image(image: AssetImage("assets/takeaway.png"),),
 
               ),
 
@@ -85,6 +82,26 @@ class _AcceptCardState extends State<AcceptCard> {
                       child: Text("Kofare Industrial, Layout", style: TextStyle( fontSize: 16),),
                     ),
 
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 15),
+                      child: Text(("Delivered Date:").toUpperCase(), style: TextStyle(fontWeight: FontWeight.bold, color:Colors.grey, fontSize: 14)),
+                    ),
+
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: Text("18th May, 2022", style: TextStyle( fontSize: 16),),
+                    ),
+
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 15),
+                      child: Text(("Delivered Time:").toUpperCase(), style: TextStyle(fontWeight: FontWeight.bold, color:Colors.grey, fontSize: 14)),
+                    ),
+
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: Text("2:41 pm", style: TextStyle( fontSize: 16),),
+                    ),
+
 
 
                   ],
@@ -96,33 +113,6 @@ class _AcceptCardState extends State<AcceptCard> {
 
           ),
 
-          Container(
-            width: size.width,
-            padding: EdgeInsets.symmetric(vertical: 7),
-            child: FlatButton(
-              color: Colors.orangeAccent,
-              onPressed: (){
-
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_)=> Delivery_tracking())
-                );
-
-              },
-              child: Text("Track Delivery", style: TextStyle(color:Colors.white),),
-            ),
-          ),
-
-          Container(
-            width: size.width,
-            padding: EdgeInsets.symmetric(vertical: 7),
-            child:  FlatButton(
-              color: Colors.red,
-              onPressed: (){
-
-              },
-              child: Text("Call Customer", style: TextStyle(color:Colors.white)),
-            ),
-          )
 
         ],
       ),

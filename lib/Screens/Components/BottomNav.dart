@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 
 
 class BottomNav extends StatefulWidget {
+
+  BottomNav({Key? key, required this.callBack, required this.state}):super(key: key);
+
+  Function callBack;
+  final int state;
+
   @override
   _BottomNavState createState() => _BottomNavState();
 }
@@ -26,22 +32,28 @@ class _BottomNavState extends State<BottomNav> {
           IconButton(
             onPressed: (){
 
+              widget.callBack(0);
+
             },
-            icon: Icon(Icons.home, color: Colors.orangeAccent, size: 30),
+            icon: Icon(Icons.home, color: (widget.state==0)?Colors.orangeAccent:Colors.black54, size: 30),
           ),
 
           IconButton(
             onPressed: (){
 
+              widget.callBack(1);
+
             },
-            icon: Icon(Icons.history, color: Colors.black, size: 30,),
+            icon: Icon(Icons.history, color: (widget.state==1)?Colors.orangeAccent:Colors.black54, size: 30,),
           ),
 
           IconButton(
             onPressed: (){
 
+              widget.callBack(2);
+
             },
-            icon: Icon(Icons.person, color: Colors.black, size: 30,),
+            icon: Icon(Icons.person, color: (widget.state==2)?Colors.orangeAccent:Colors.black54, size: 30,),
           )
 
         ]

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Components/AcceptedCards.dart';
+import 'Delivery_tracking.dart';
 
 class AcceptOrder extends StatefulWidget {
   @override
@@ -27,7 +28,11 @@ class _AcceptOrderState extends State<AcceptOrder> {
               itemCount: 10,
               itemBuilder: (BuildContext ctx, i){
 
-                return AcceptCard();
+                return GestureDetector(
+                    onTap: (){
+
+                    },
+                    child:AcceptCard());
 
               }),
 
